@@ -1,4 +1,0 @@
-# free_cookie获取
-hostname = 2c.lol
-
-^https:\/\/2c\.lol\/user url script-request-header https://raw.githubusercontent.com/yanyu1111/GG_Bond/main/freeCheckIn.js
