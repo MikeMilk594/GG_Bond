@@ -1,12 +1,6 @@
 /*************************************
-
 项目名称：彩云天气-净化/SVIP
-下载地址：https://t.cn/A66d95hV
 脚本作者：chxm1023
-Token数据来源：@WeiRenQAQ
-电报频道：https://t.me/chxm1023
-使用声明：⚠️仅供参考，🈲转载与售卖！
-
 **************************************
 
 [rewrite_local]
@@ -72,7 +66,7 @@ urls.forEach(url => {
           svip_expired_at: 4092599349,
           svip_take_effect: 1,
           vip_type: "s",
-          name: "叮当猫の分享频道",
+          name: "天气之子",
           avatar: "https://profile-avatar.csdnimg.cn/82c0e3822ede42c3b2f91742aee0044f_weixin_45302969.jpg",
           token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJ1c2VyX2lkIjoiNWY1YmZjNTdkMmM2ODkwMDE0ZTI2YmI4Iiwic3ZpcF9leHBpcmVkX2F0IjoxNzA1MzMxMTY2LjQxNjc3MSwidmlwX2V4cGlyZWRfYXQiOjB9.h_Cem89QarTXxVX9Z_Wt-Mak6ZHAjAJqgv3hEY6wpps"
         }
