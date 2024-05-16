@@ -1,6 +1,8 @@
 #!name=❏ 彩云天气pro
 #!category=🛡️去除广告｜🔏软件解锁｜📦信息面板
 #!desc=彩云天气pro
+#!icon = https://raw.githubusercontent.com/chxm1023/Task/main/icon/caiyun.png
+
 [Map Local]
 # > 彩云天气 去广告
 ^https:\/\/biz\.cyapi\.cn\/p\/v1\/entries\? data-type=text data="{}" status-code=200
