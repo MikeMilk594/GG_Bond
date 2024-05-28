@@ -34,5 +34,9 @@ http-response ^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-
 # 获取奶茶签到需要的各项参数
 http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, tag=奶茶获取token
 
+# > 晓晓优选
+# hostname = xxyx-client-api.xiaoxiaoyouxuan.com
+http-response ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, requires-body=true, timeout=60, tag=晓晓优选
+
 [MITM]
-hostname = *.amap.com, mxsa.mxbc.net, mall.meituan.com, yuchen.tonghuaios.com, i.meituan.com, qmwebapi.qmai.cn, webapi.qmai.cn, webapi2.qmai.cn, vip.ixiliu.cn
+hostname = *.amap.com, mxsa.mxbc.net, mall.meituan.com, yuchen.tonghuaios.com, i.meituan.com, qmwebapi.qmai.cn, webapi.qmai.cn, webapi2.qmai.cn, vip.ixiliu.cn, xxyx-client-api.xiaoxiaoyouxuan.com
