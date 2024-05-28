@@ -38,9 +38,5 @@ http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/int
 # hostname = xxyx-client-api.xiaoxiaoyouxuan.com
 http-response ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, requires-body=true, timeout=60, tag=晓晓优选
 
-# > 腾讯视频 
-http-request ^https:\/\/access.video.qq.com\/user\/auth_refresh script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.cookie.js, timeout=60, tag=腾讯视频.cookie
-
-
 [MITM]
-hostname = *.amap.com, mxsa.mxbc.net, mall.meituan.com, yuchen.tonghuaios.com, i.meituan.com, qmwebapi.qmai.cn, webapi.qmai.cn, webapi2.qmai.cn, vip.ixiliu.cn, xxyx-client-api.xiaoxiaoyouxuan.com, *.video.qq.com
+hostname = *.amap.com, mxsa.mxbc.net, mall.meituan.com, yuchen.tonghuaios.com, i.meituan.com, qmwebapi.qmai.cn, webapi.qmai.cn, webapi2.qmai.cn, vip.ixiliu.cn, xxyx-client-api.xiaoxiaoyouxuan.com
