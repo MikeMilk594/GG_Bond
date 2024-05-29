@@ -56,6 +56,9 @@ http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity script-
 # ～ BiliBili_哔哩哔哩_热搜发现@ddgksf2013
 http-response ^https://app.bilibili.com/x/v2/search/square script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body=true, timeout=60, tag=bilibili_json
 
+# ～ BiliBili_哔哩哔哩_青少年弹窗@BiliUniverse
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_proto_beta.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili_proto_beta
+
 # ～ BiliBili_哔哩哔哩_繁体CC字幕转中文简体[自行启用hostname=aisubtitle.hdslb.com,i0.hdslb.com]@ddgksf2013
 http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
 
