@@ -38,8 +38,5 @@ http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/int
 # hostname = xxyx-client-api.xiaoxiaoyouxuan.com
 http-response ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, requires-body=true, timeout=60, tag=晓晓优选
 
-# 获取松鼠ios签到需要的各项参数
-http-request ^https\:\/\/iios\.songshuyouxi\.com\/user script-path=https://raw.githubusercontent.com/yanyu1111/GG_Bond/main/songshu.js, timeout=60, tag=sxios
-
 [MITM]
-hostname = *.amap.com, mxsa.mxbc.net, mall.meituan.com, yuchen.tonghuaios.com, i.meituan.com, qmwebapi.qmai.cn, webapi.qmai.cn, webapi2.qmai.cn, vip.ixiliu.cn, xxyx-client-api.xiaoxiaoyouxuan.com, iios.songshuyouxi.com
+hostname = *.amap.com, mxsa.mxbc.net, mall.meituan.com, yuchen.tonghuaios.com, i.meituan.com, qmwebapi.qmai.cn, webapi.qmai.cn, webapi2.qmai.cn, vip.ixiliu.cn, xxyx-client-api.xiaoxiaoyouxuan.com
