@@ -20,6 +20,9 @@
 ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
 
 [Script]
+# ～ BiliBili_哔哩哔哩_推荐去广告@ddgksf2013
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body=true, timeout=60, tag=bilibili_json
+
 # ～ BiliBili_哔哩哔哩_视频播放下方商品推广@ddgksf2013
 http-response ^https?:\/\/api\.bili(api|bili)\.(net|com)\/pgc\/season\/app\/related\/recommend\? script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body=true, timeout=60, tag=bilibili_json
 
