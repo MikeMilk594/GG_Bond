@@ -5,20 +5,23 @@
 [Rewrite
 ####################===################===####################
 # > 美团
-^https?:\/\/img\.meituan\.net\/(?>adunion|display|midas)\/.+?\.(gif|jpg|jpg\.webp)$ - reject-200
-^https?:\/\/p\d\.meituan\.net\/wmbanner\/[A-Za-z0-9]+?\.jpg - reject-200
-^https?:\/\/p\d\.meituan\.net\/movie\/[A-Za-z0-9]+?\.jpg\?may_covertWebp - reject-200
-^https?:\/\/s3plus\.meituan\.net\/.+?\/linglong\/ - reject
-^https?:\/\/s3plus\.meituan\.net\/v1\/mss_a002 - reject-img
-^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\? - reject
-^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo\? - reject
-^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture - reject
-^https?:\/\/flowplus\.meituan\.net\/v\d\/\w+\/linglong\/\d+\.(gif|jpg|mp4) - reject
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject
-^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate? - reject
-^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$ - reject
-^https?:\/\/p\d.meituan.net\/movie\/.*?\?may_covertWebp - reject-img
-^https?:\/\/p\d{1}\.meituan\.net\/(adunion|display|mmc|wmbanner)\/ - reject
+# hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com
+^https?:\/\/img\.meituan\.net\/(?>adunion|display|midas)\/.+?\.(gif|jpg|jpg\.webp)$ url reject-200
+^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$ url reject-200
+^https?:\/\/p\d\.meituan\.net\/wmbanner\/[A-Za-z0-9]+?\.jpg url reject-200
+^https?:\/\/p\d\.meituan\.net\/movie\/[A-Za-z0-9]+?\.jpg\?may_covertWebp url reject-200
+^https?:\/\/s3plus\.meituan\.net\/.+?\/linglong\/ url reject
+^https?:\/\/s3plus\.meituan\.net\/v1\/mss_a002 url reject-img
+^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\? url reject
+^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo\? url reject
+^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture url reject
+^https?:\/\/flowplus\.meituan\.net\/v\d\/\w+\/linglong\/\d+\.(gif|jpg|mp4) url reject
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) url reject
+^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate? url reject
+^https?:\/\/p\d.meituan.net\/movie\/.*?\?may_covertWebp url reject-img
+^https?:\/\/p\d{1}\.meituan\.net\/(adunion|display|mmc|wmbanner)\/ url reject
+# 美团订单详情页更多推荐
+^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends url reject
 
 ####################===################===####################
 # > 拼多多
@@ -46,7 +49,7 @@
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery - reject
 
 ####################===################===####################
-# 开屏广告
+# > 动卡空间 开屏广告
 ^https:\/\/ump\.sz\.creditcard\.ecitic\.com\/citiccard\/cm-ump\/ump-gateway\/ump-net-app\/ump-net-app\/adv - reject-dict
 ^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config - reject-200
 
@@ -69,4 +72,4 @@ http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-pa
 http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
 
 [MITM]
-hostname = s3plus.meituan.net, p*.meituan.net, www.meituan.com, cdb.meituan.com, wmapi.meituan.com, flowplus.meituan.net, img.meituan.net, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com
+hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com
