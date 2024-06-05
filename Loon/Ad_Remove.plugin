@@ -2,8 +2,8 @@
 #!desc=自用应用去广告合集
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
 
-[Rewrite
-####################===################===####################
+[Rewrite]
+
 # > 美团
 # hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com
 ^https?:\/\/img\.meituan\.net\/(?>adunion|display|midas)\/.+?\.(gif|jpg|jpg\.webp)$ url reject-200
@@ -23,7 +23,6 @@
 # 美团订单详情页更多推荐
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends url reject
 
-####################===################===####################
 # > 拼多多
 ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 # hostname = adim.pinduoduo.com
@@ -43,27 +42,24 @@
 # hostname = us.l.qq.com
 ^https?:\/\/us\.l\.qq\.com\/exapp.+ - reject
 
-####################===################===####################
+
 # > 交管12123
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery - reject
 
-####################===################===####################
+
 # > 动卡空间 开屏广告
 ^https:\/\/ump\.sz\.creditcard\.ecitic\.com\/citiccard\/cm-ump\/ump-gateway\/ump-net-app\/ump-net-app\/adv - reject-dict
 ^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config - reject-200
 
 [Script]
 
-####################===################===####################
 # 多多买菜 # 开屏广告 感谢@豆豆分享
 http-response ^https:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22list%22%3A%5C%5B.%2B%5C%5D-%3E%22list%22%3A%5B%5D
 
-####################===################===####################
 # 555影视 去除广告模块 @墨鱼
 http-response ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend script-path=https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js, requires-body=true, timeout=60, tag=555Ad
 
-####################===################===####################
 # BiliBili 我的页面 解锁1080P高码率,4K画质,皮肤推送 //app.bilibili.com
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body=true, timeout=60, tag=json
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body=true, timeout=60, tag=json
@@ -71,5 +67,10 @@ http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-pa
 # ～ BiliBili_哔哩哔哩_繁体CC字幕转中文简体[自行启用hostname=aisubtitle.hdslb.com,i0.hdslb.com]@ddgksf2013
 http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
 
+# 车票票  v1.2.3 @chxm1023
+http-response ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/chepiaopiao.js, requires-body=true, timeout=60, tag=chepiaopiao
+http-request ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/chepiaopiao.js, timeout=60, tag=chepiaopiao
+
+
 [MITM]
-hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com
+hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com, api.revenuecat.com
