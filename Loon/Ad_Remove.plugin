@@ -67,10 +67,9 @@ http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-pa
 # ～ BiliBili_哔哩哔哩_繁体CC字幕转中文简体[自行启用hostname=aisubtitle.hdslb.com,i0.hdslb.com]@ddgksf2013
 http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
 
-# 车票票  v1.2.3 @chxm1023
-http-response ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/chepiaopiao.js, requires-body=true, timeout=60, tag=chepiaopiao
-http-request ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/chepiaopiao.js, timeout=60, tag=chepiaopiao
-
+# 蜗牛睡眠
+# hostname = snailsleep.net
+http-response ^https?:\/\/snailsleep\.net\/snail\/v\d\/profile\/get.+ script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/woniushuimian.js, requires-body=true, tag=蜗牛睡眠
 
 [MITM]
-hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com, api.revenuecat.com
+hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com, snailsleep.net
