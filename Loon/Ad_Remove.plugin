@@ -86,9 +86,12 @@ http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-pa
 # ～ BiliBili_哔哩哔哩_繁体CC字幕转中文简体[自行启用hostname=aisubtitle.hdslb.com,i0.hdslb.com]@ddgksf2013
 http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
 
+# 12306去广告
+http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://raw.githubusercontent.com/yanyu1111/GG_Bond/main/12306.js, requires-body=true, timeout=60, tag=12306
+
 # 蜗牛睡眠
 # hostname = snailsleep.net
 http-response ^https?:\/\/snailsleep\.net\/snail\/v\d\/profile\/get.+ script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/woniushuimian.js, requires-body=true, tag=蜗牛睡眠
 
 [MITM]
-hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com, snailsleep.net, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, zlsdk.1rtb.net, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
+hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com, snailsleep.net, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, zlsdk.1rtb.net, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com, ad.12306.cn
