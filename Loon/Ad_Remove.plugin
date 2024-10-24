@@ -23,39 +23,9 @@
 # 美团订单详情页更多推荐
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends url reject
 
-# > 拼多多
-^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
-# hostname = adim.pinduoduo.com
-^https:\/\/(adim|images)\.pinduoduo\.com\/(.+\/toutiao|mrk\/.+) - reject
-# hostname = video-dsp.pddpic.com
-^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video - reject
-# hostname = *.gdt.qq.com
-^http[s]?:\/\/.*\.gdt\.qq\.com\/gdt_mview.+ - reject
-# hostname = access.pangolin-sdk-toutiao*.com,
-^http[s]?:\/\/api-access\.pangolin-sdk-toutiao.*\.com - reject
-# hostname = *.pglstatp-toutiao.com
-^http[s]?:\/\/.*\.pglstatp-toutiao\.com\/.+ - reject
-# hostname = adsmind.gdtimg.com
-^https?:\/\/adsmind\.gdtimg\.com\/ads_svp_video.+ - reject
-# hostname = pgdt.gtimg.cn
-^https:\/\/pgdt\.gtimg\.cn - reject
-# hostname = us.l.qq.com
-^https?:\/\/us\.l\.qq\.com\/exapp.+ - reject
-
-
-# > 交管12123
-^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
-^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery - reject
-
-
 # > 动卡空间 开屏广告
 ^https:\/\/ump\.sz\.creditcard\.ecitic\.com\/citiccard\/cm-ump\/ump-gateway\/ump-net-app\/ump-net-app\/adv - reject-dict
 ^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config - reject-200
-
-# > 小蚕霸王餐
-# hostname = zlsdk.1rtb.net
-# 去广告，感谢【sliverkiss】分享
-^https?:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad url reject-dict
 
 # > 晓晓优选
 # hostname = xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net
@@ -75,10 +45,6 @@
 
 
 [Script]
-
-# 多多买菜 # 开屏广告 感谢@豆豆分享
-http-response ^https:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22list%22%3A%5C%5B.%2B%5C%5D-%3E%22list%22%3A%5B%5D
-
 # BiliBili 我的页面 解锁1080P高码率,4K画质,皮肤推送 //app.bilibili.com
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body=true, timeout=60, tag=json
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body=true, timeout=60, tag=json
@@ -94,4 +60,4 @@ http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://r
 http-response ^https?:\/\/leancloud\.emotionwp\.com\/.+\/(classes|batch\/save) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bizhi.js, requires-body=true, tag=壁纸
 
 [MITM]
-hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, adim.pinduoduo.com, api.pinduoduo.com, mobile.yangkeduo.com, api.yangkeduo.com, gab.122.gov.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, zlsdk.1rtb.net, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com, ad.12306.cn, leancloud.emotionwp.com
+hostname = img.meituan.net, p*.meituan.net, s3plus.meituan.net, www.meituan.net, flowplus.meituan.net, wmapi.meituan.net, apimobile.meituan.net, apimobile.meituan.com, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, ump.sz.creditcard.ecitic.com, app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com, ad.12306.cn, leancloud.emotionwp.com
