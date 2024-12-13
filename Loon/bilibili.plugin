@@ -1,0 +1,12 @@
+#!name=BiliBili
+#!desc=BiliBili
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
+
+[Script]
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? script-path=https://raw.githubusercontent.com/Moli-X/Resources/main/Script/Bilibili/bilibili_json.js, requires-body=true, timeout=60, tag=bilibili_json
+
+# ～ BiliBili_哔哩哔哩_繁体CC字幕转中文简体[自行启用hostname=aisubtitle.hdslb.com,i0.hdslb.com]@ddgksf2013
+http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
+
+[MITM]
+hostname = app.bilibili.com, aisubtitle.hdslb.com,i0.hdslb.com
