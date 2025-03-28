@@ -1,0 +1,26 @@
+#!name=小红书去水印
+#!desc=小红书评论区去水印
+#!author=奶思[https://github.com/fmz200]
+#!icon=https://raw.githubusercontent.com/Moli-X/Resources/main/Icon/Other/XiaoHongShu.png
+#!homepage=https://github.com/fmz200/wool_scripts
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
+#!tg-group=https://t.me/lanjieguanggao
+#!category=奶思的模块
+#!tag=去广告, fmz200, 奶思
+#!date=2025-03-26 20:30:00
+
+[Argument]
+xnhsuu_enable = switch,true,false,tag=小红书
+
+[Rewrite]
+# 评论区图片水印
+^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark reject-img
+
+
+[Script]
+# 评论区图片、live图水印，表情包下载
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v5\/note\/comment\/list|v3\/note\/comment\/sub_comments)\? script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=小红书评论区去水印存储, enable={xnhsuu_enable}
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\? script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=小红书评论区去水印下载, enable={xnhsuu_enable}
+
+[MITM]
+hostname = edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com
