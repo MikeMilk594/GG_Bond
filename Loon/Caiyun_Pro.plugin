@@ -9,8 +9,6 @@
 DOMAIN,gather.colorfulclouds.net,REJECT
 
 [Rewrite]
-# 优惠券提醒
-^https:\/\/biz\.cyapi\.cn\/api\/v1\/coupons\? url reject-dict
 # 普通版开屏广告(此广告不定时出现)
 ^https:\/\/ad\.cyapi\.cn\/v2\/req\?app_name=weather - reject-dict
 # 7.1.9 限时福利Svip
