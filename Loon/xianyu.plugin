@@ -33,4 +33,4 @@ http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.loca
 
 
 [MITM]
-hostname = acs.m.goofish.com, g-acs.m.goofish.com, dinamicx.alibabausercontent.com
+hostname = acs.m.goofish.com, g-acs.m.goofish.com, dinamicx.alibabausercontent.com,acs.m.taobao.com, amdc.m.taobao.com, guide-acs.m.taobao.com,
