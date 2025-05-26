@@ -1,6 +1,11 @@
 #!name=美团
 #!desc=美团去广告
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/meituan.png
+#!homepage=https://github.com/fmz200/wool_scripts
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
+#!tg-group=https://t.me/lanjieguanggao
+#!category=奶思的模块
+#!tag=去广告, fmz200, 奶思
 
 [Rewrite]
 # > 美团 & 美团外卖
@@ -13,5 +18,9 @@
 # 美团订单详情页更多推荐
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends reject-dict
 
+# > 美团众包
+# hostname = peisongapi.meituan.com
+^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage reject-200
+
 [MITM]
-hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
+hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, peisongapi.meituan.com
