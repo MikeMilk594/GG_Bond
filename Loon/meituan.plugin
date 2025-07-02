@@ -21,5 +21,12 @@
 # > 美团众包
 ^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage reject-200
 
+# > 达达骑士版
+# hostname = delivery-api.imdada.cn
+# 开屏广告，弹窗广告，首页置顶轮播广告 感谢【T大G】分享
+^https?:\/\/delivery-api\.imdada\.cn\/v2_0\/dada\/promote\/imax\?privacyParam reject-dict
+^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/screen\/ads_list reject-dict
+^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/ad reject-dict
+
 [MITM]
-hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, peisongapi.meituan.com
+hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, peisongapi.meituan.com, delivery-api.imdada.cn
