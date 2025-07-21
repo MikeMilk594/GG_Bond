@@ -1,0 +1,10 @@
+#!name = 测速
+#!author = @ddm1023
+#!homepage = https://t.me/ddm1023
+
+[Script]
+#网速管家 hostname = api*.speedtest.cn
+http-response ^https?:\/\/api.*\.speedtest\.cn\/user\/info script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/wsgj.js, requires-body=true, timeout=60, tag=wsgj
+
+[MITM]
+hostname = api*.speedtest.cn
